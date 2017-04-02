@@ -1,0 +1,20 @@
+{
+  "name": "jeuxreseau",
+  "version": "1.0.0",
+  "description": "Premier jeux websocket",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "mouss",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-vhosts-autoloader": "^0.1.3",
+    "mongodb": "^2.2.24",
+    "pug": "^2.0.0-beta11",
+    "sessionstorage": "0.0.2",
+    "socket.io": "^1.7.3"
+  }
+}
