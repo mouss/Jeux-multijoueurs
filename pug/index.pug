@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Jeux Multi Joueurs
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  
+
+  body
+    .wrapper
+      .container
+        h1 Bienvenue
+        form.form(action='/jeu')
+          input(type='text', id='pseudo' name="pseudo")
+          // <input type="password" placeholder="Password">
+          button#login-button(type='submit') Envoyer
+      ul.bg-bubbles
+        li
+        li
+        li
+        li
+        li
+        li
+        li
+        li
+        li
+        li
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='js/front.js')
