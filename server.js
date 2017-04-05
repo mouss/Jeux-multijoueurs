@@ -48,8 +48,8 @@ MongoClient.connect(URL, function(err, db) {
 // var port = process.env['PORT'] || 80;
 
 // Démarrage du serveur pour l'application principale express
-var server = app.listen(8888, function() {
-  console.log( 'Server listening on port 8888 ');
+var server = app.listen(8080, function() {
+  console.log( 'Server listening on port 8080 ');
 });
 app.get('/', function(req,res){
   res.render('accueil.pug');
