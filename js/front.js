@@ -2,7 +2,7 @@
 (function(window, io){
 
 
-  window.addEventListener('load',function(){
+window.addEventListener('load',function(){
 
     var j = 0;
 
@@ -59,8 +59,8 @@
   socket.on('update', function(data){
     draw(data);
   });
-  socket.on('create', function(data){
 
+  socket.on('create', function(data){
       rond(data)
   });
 
@@ -69,16 +69,15 @@
     if (avatar) {
       avatar.remove();
     }
-
   });
-  socket.on('username', function(data){
 
+  socket.on('username', function(data){
     var node = document.createElement("p");
     var textnode = document.createTextNode(data.user);
     node.appendChild(textnode);
-  document.getElementById(data.id).appendChild(node);
-
+    document.getElementById(data.id).appendChild(node);
   });
+
   socket.on('list_users', function(data){
     var tableauUser = document.createElement("table");
     var tr = document.createElement('tr');
@@ -103,30 +102,29 @@
       tableauUser.appendChild(tr[i]);
     }
       document.getElementById("top_score").appendChild(tableauUser);
-
   });
 
   socket.on('nombre_client', function(data){
     document.getElementById("nombre_client").innerHTML = data;
   });
+
   socket.on('remove_cercle', function(data){
     var monRond = document.getElementById(data.id);
     if(monRond){
       monRond.remove();
     }
   });
-  socket.on('maj_score', function(data){
-    console.log(data)
-   document.getElementById("score").innerHTML = data.score;
 
+  socket.on('maj_score', function(data){
+   document.getElementById("score").innerHTML = data.score;
   });
 
 
   document.getElementById("game").addEventListener('mousemove', function(event){
     var gameWidth = document.getElementById('game').offsetWidth + document.getElementById('sidebar').offsetWidth + ((document.body.offsetWidth -  document.getElementById('container').offsetWidth) / 2) - 15;
     var gameHeight = document.getElementById('game').offsetHeight - 15;
-    if(event.clientX < gameWidth && event.clientY < gameHeight){
 
+    if(event.clientX < gameWidth && event.clientY < gameHeight){
       socket.emit('move', {
         top: event.clientY - 15,
         left: event.clientX -15
@@ -134,6 +132,6 @@
     }
   });
 
-  });
+});
 
 })(window, io);
